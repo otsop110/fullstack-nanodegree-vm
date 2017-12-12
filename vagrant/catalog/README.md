@@ -35,6 +35,8 @@ Frontend: HTML, CSS, JS
 7. Access the application
 Visit [http://localhost:5000](http://localhost:5000)
 
+8. Remember to add your Google+ and Facebook Client secrets to client_secrets.json and fb_client_secrets.json files. Otherwise the Login authorization won't work.
+
 ### Google credentials file
 * Go to https://console.cloud.google.com/apis/credentials/oauthclient and setup Google OAuth API Credentials. 
 * Enter ```http://localhost:5000``` in the Authorized JavaScript origins and ```http://localhost:5000/login and http://localhost:5000/gconnect``` in the Authorized redirect URIs.
