@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="display">
+        <div class="col-md-4 col-sm-4 col-xs-4 text-left">
+            <h3 class="text-left">Categories</h3>
+            <ul> {% for category in categories %}
+                <li class="list"><a href="{{ url_for('filmGenre', category_id=category.id) }}" id="full-pad">{{ category.name }}</a></li> {% endfor %} </ul>
+        </div>
+        <div class="col-md-8 col-sm-6 col-xs-6 text-left">
+            <h3 class="text-left">Latest films added</h3>
+            <ul>
+                {% for l in latest %}
+                <li class="list"> <a href="{{ url_for('showItem', category_id=l.category.id, item_id=l.id) }}" id="latest"> {{ l.name }} </a><br> <span class="category text-muted"> {{ l.category.name }}</span>
+                    <br> </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

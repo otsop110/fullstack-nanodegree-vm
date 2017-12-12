@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="display">
+	<h4> Are you sure you want to delete {{item.name}}? </h4>
+	<div class="form-buttons">
+		<form action="#" method='post'>
+			<button type="button" class="btn btn-outline-primary"><a href="{{ url_for('showItem', category_id=item.category.id, item_id=item.id) }}"><i class="fa fa-ban fa-3x" aria-hidden="true"></i></a></button>
+			<button type="submit" class="btn btn-outline-secondary"><i class="fa fa-trash-o fa-3x" aria-hidden="true"></i></button>
+		</form>
+</div>
+
+{% endblock %}

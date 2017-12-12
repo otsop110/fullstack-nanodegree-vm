@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<ol class="breadcrumb">
+    <li> <a href="/"><i class="fa fa-home fa-2x"></i></a> </li>
+    <li> <a href="/category">Categories</a> </li>
+    <li class="active">{{ category.name }} </li>
+</ol>
+    <div class="row">
+        <div class="menu">
+            <div class ="col-md-4 col-sm-4 col-xs-4 text-left">
+                <h3>Film Categories</h3>
+                <ul>
+                    {% for category in categories %}
+                    <li class="list"> <a href="{{ url_for('filmGenre', category_id=category.id) }}">{{ category.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-8 col-sm-6 col-xs-6 text-left">
+                <h3 class="text-left">{{ category.name }}</h3>
+                    <ul>
+                        {% for i in items %}
+                        <li class="list"> <a href="{{ url_for('showItem', category_id=i.category.id, item_id=i.id) }}">{{ i.name }} </a><span class="category text-muted"><br>{{ i.description}}
+                        <br></li><br>
+                        {% endfor %}
+
+                        {% if 'username' in session %}
+                        <a href="{{ url_for('newFilmItem', category_id=category.id) }}"><i class="fa fa-plus fa-3x" aria-hidden="true"></i></a>
+                        {% endif %}
+                    </ul>
+            </div>
+        </div>
+    </div>    
+{% endblock%}

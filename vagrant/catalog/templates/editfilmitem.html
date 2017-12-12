@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+	<div class="display">
+		<div class="col-md-8 col-md-offset-2">
+			<h4>Edit Your Film Entry</h4>
+				<form action="#" method='post' enctype="multipart/form-data">
+
+					<label for="name">Name:</label>
+					<input type='text' class="form-control" name="name" id="name" placeholder='{{i.name}}'>
+					<label for="description">Description:</label>
+
+					<textarea class="form-control" name="description" id="description">{{ i.description }}</textarea>
+
+					<div class="form-buttons">
+                    	<button type="button" class="btn btn-outline-primary">
+                    	<a href="{{ url_for('showItem', category_id=category_id, item_id=i.id) }}"><i class="fa fa-ban fa-3x" aria-hidden="true"></i></a></button>
+                    	<button type="submit" class="btn btn-outline-primary"><i class="fa fa-paper-plane-o fa-3x" aria-hidden="true"></i></button>
+                	</div>
+				</form>
+
+{% endblock %}

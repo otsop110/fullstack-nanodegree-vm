@@ -1,0 +1,11 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.pyc
+*.DS_Store
+
+# Vagrant
+.vagrant/
+
+# Untracked files:
+*.a.json
+**/application_files
